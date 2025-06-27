@@ -83,6 +83,7 @@ namespace OnlineBookShop.Services
             using var conn = new NpgsqlConnection(_connectionString);
             await conn.OpenAsync();
 
+            // Eğer veritabanı FOREIGN KEY CASCADE ile yapılandırıldıysa, sadece users tablosundan silmek yeterlidir.
             var cmd = new NpgsqlCommand("DELETE FROM users WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("id", id);
             return await cmd.ExecuteNonQueryAsync() > 0;

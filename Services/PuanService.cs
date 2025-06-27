@@ -1,4 +1,5 @@
 using Npgsql;
+using OnlineBookShop.Services;
 
 namespace OnlineBookShop.Services
 {
@@ -23,6 +24,7 @@ namespace OnlineBookShop.Services
                 ON CONFLICT (kullanici_id, kitap_id)
                 DO UPDATE SET puan = EXCLUDED.puan;
             ", conn);
+
             cmd.Parameters.AddWithValue("kullaniciId", kullaniciId);
             cmd.Parameters.AddWithValue("kitapId", kitapId);
             cmd.Parameters.AddWithValue("puan", puan);
@@ -30,7 +32,7 @@ namespace OnlineBookShop.Services
             return await cmd.ExecuteNonQueryAsync() > 0;
         }
 
-        public async Task<double> OrtalamaPuanAsync(int kitapId)
+        public async Task<decimal> OrtalamaPuanAsync(int kitapId)
         {
             using var conn = new NpgsqlConnection(_connectionString);
             await conn.OpenAsync();
@@ -39,7 +41,8 @@ namespace OnlineBookShop.Services
             cmd.Parameters.AddWithValue("kitapId", kitapId);
 
             var result = await cmd.ExecuteScalarAsync();
-            return (result is DBNull || result == null) ? 0.0 : Convert.ToDouble(result);
+
+            return (result is DBNull || result == null) ? 0.0m : Convert.ToDecimal(result);
         }
     }
 }

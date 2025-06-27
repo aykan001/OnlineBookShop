@@ -301,334 +301,6 @@
       ]
     },
     {
-      "Route": "images/kitapresmi.jpg",
-      "AssetFile": "images/kitapresmi.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "119981"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 18:52:36 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM="
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi.oayyiyry81.jpg",
-      "AssetFile": "images/kitapresmi.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "119981"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 18:52:36 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oayyiyry81"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM="
-        },
-        {
-          "Name": "label",
-          "Value": "images/kitapresmi.jpg"
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi2.jpg",
-      "AssetFile": "images/kitapresmi2.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6411"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 19:09:46 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE="
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi2.n12nalorc5.jpg",
-      "AssetFile": "images/kitapresmi2.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6411"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 19:09:46 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "n12nalorc5"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE="
-        },
-        {
-          "Name": "label",
-          "Value": "images/kitapresmi2.jpg"
-        }
-      ]
-    },
-    {
-      "Route": "images/kullanıcıGirişi.7qt7k97n03.png",
-      "AssetFile": "images/kullanıcıGirişi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13656"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:30:31 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7qt7k97n03"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0="
-        },
-        {
-          "Name": "label",
-          "Value": "images/kullanıcıGirişi.png"
-        }
-      ]
-    },
-    {
-      "Route": "images/kullanıcıGirişi.png",
-      "AssetFile": "images/kullanıcıGirişi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13656"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:30:31 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0="
-        }
-      ]
-    },
-    {
-      "Route": "images/yönetici.nkvpvdfqs4.png",
-      "AssetFile": "images/yönetici.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5721"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:31:34 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nkvpvdfqs4"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU="
-        },
-        {
-          "Name": "label",
-          "Value": "images/yönetici.png"
-        }
-      ]
-    },
-    {
-      "Route": "images/yönetici.png",
-      "AssetFile": "images/yönetici.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5721"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:31:34 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU="
-        }
-      ]
-    },
-    {
       "Route": "index.html",
       "AssetFile": "index.html.gz",
       "Selectors": [
@@ -927,174 +599,13 @@
       ]
     },
     {
-      "Route": "kitaplik.c8aibhzty7.html",
-      "AssetFile": "kitaplik.html.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000309885342"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3226"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c8aibhzty7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
-        },
-        {
-          "Name": "label",
-          "Value": "kitaplik.html"
-        }
-      ]
-    },
-    {
-      "Route": "kitaplik.c8aibhzty7.html",
-      "AssetFile": "kitaplik.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "12268"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c8aibhzty7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
-        },
-        {
-          "Name": "label",
-          "Value": "kitaplik.html"
-        }
-      ]
-    },
-    {
-      "Route": "kitaplik.c8aibhzty7.html.gz",
-      "AssetFile": "kitaplik.html.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3226"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c8aibhzty7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU="
-        },
-        {
-          "Name": "label",
-          "Value": "kitaplik.html.gz"
-        }
-      ]
-    },
-    {
       "Route": "kitaplik.html",
       "AssetFile": "kitaplik.html.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000309885342"
+          "Quality": "0.000285551114"
         }
       ],
       "ResponseHeaders": [
@@ -1112,7 +623,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3226"
+          "Value": "3501"
         },
         {
           "Name": "Content-Type",
@@ -1120,15 +631,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
+          "Value": "W/\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         },
         {
           "Name": "Vary",
@@ -1138,7 +649,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
         }
       ]
     },
@@ -1157,7 +668,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12268"
+          "Value": "13217"
         },
         {
           "Name": "Content-Type",
@@ -1165,17 +676,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
+          "Value": "\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
         }
       ]
     },
@@ -1198,7 +709,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3226"
+          "Value": "3501"
         },
         {
           "Name": "Content-Type",
@@ -1206,11 +717,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         },
         {
           "Name": "Vary",
@@ -1220,7 +731,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU="
+          "Value": "sha256-9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo="
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.ly6oun2vrr.html",
+      "AssetFile": "kitaplik.html.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000285551114"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ly6oun2vrr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
+        },
+        {
+          "Name": "label",
+          "Value": "kitaplik.html"
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.ly6oun2vrr.html",
+      "AssetFile": "kitaplik.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ly6oun2vrr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
+        },
+        {
+          "Name": "label",
+          "Value": "kitaplik.html"
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.ly6oun2vrr.html.gz",
+      "AssetFile": "kitaplik.html.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ly6oun2vrr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo="
+        },
+        {
+          "Name": "label",
+          "Value": "kitaplik.html.gz"
         }
       ]
     },

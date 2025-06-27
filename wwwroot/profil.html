@@ -108,6 +108,16 @@
     alert("Giriş yapmanız gerekiyor.");
     window.location.href = "index.html";
   }
+
+  function escapeHTML(str) {
+    return String(str).replace(/[&<>"']/g, m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    })[m]);
+  }
 </script>
 
 <a href="kitaplik.html" class="back-link">&larr; Kitaplığa Dön</a>
@@ -159,9 +169,12 @@
       if (!res.ok) throw new Error("Kullanıcı bilgisi alınamadı.");
       const data = await res.json();
 
+      const ad = escapeHTML(data.ad);
+      const email = escapeHTML(data.email);
+
       document.getElementById("userInfo").innerHTML = `
-        <div><strong>Ad:</strong> ${data.ad}</div>
-        <div><strong>Email:</strong> ${data.email}</div>
+        <div><strong>Ad:</strong> ${ad}</div>
+        <div><strong>Email:</strong> ${email}</div>
       `;
     } catch (e) {
       document.getElementById("userInfo").innerText = "Kullanıcı bilgileri yüklenemedi.";
@@ -175,7 +188,9 @@
       const res = await fetch(`/api/siparisler/${userId}`);
       if (res.ok) {
         const books = await res.json();
-        list.innerHTML = books.map(b => `<option>${b.kitapAdi} - ₺${b.ucret.toFixed(2)}</option>`).join("");
+        list.innerHTML = books.map(b =>
+          `<option>${escapeHTML(b.kitapAdi)} - ₺${b.ucret.toFixed(2)}</option>`
+        ).join("");
       } else {
         list.innerHTML = `<option>Hata oluştu.</option>`;
       }
@@ -228,3 +243,4 @@
 </script>
 </body>
 </html>
+

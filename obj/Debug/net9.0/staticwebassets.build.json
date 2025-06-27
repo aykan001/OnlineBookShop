@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BDta4pwQP0Vyhkxf24Ui7tKmHvUmJCTqQMo9HyWiyWA=",
+  "Hash": "K+OvMrLayNVr5r3rrtfDmQpL7088Cet6OXXzu2TTnW4=",
   "Source": "OnlineBookShop",
   "BasePath": "_content/OnlineBookShop",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-c8aibhzty7.gz",
+      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-ly6oun2vrr.gz",
       "SourceId": "OnlineBookShop",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/OnlineBookShop",
-      "RelativePath": "kitaplik#[.{fingerprint=c8aibhzty7}]?.html.gz",
+      "RelativePath": "kitaplik#[.{fingerprint=ly6oun2vrr}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "4dj1z1nsmd",
-      "Integrity": "uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=",
+      "Fingerprint": "sku9yqn0y1",
+      "Integrity": "9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html"
@@ -164,90 +164,6 @@
       "OriginalItemSpec": "wwwroot\\begeniler.html"
     },
     {
-      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi.jpg",
-      "SourceId": "OnlineBookShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\",
-      "BasePath": "_content/OnlineBookShop",
-      "RelativePath": "images/kitapresmi#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "oayyiyry81",
-      "Integrity": "ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\kitapresmi.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi2.jpg",
-      "SourceId": "OnlineBookShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\",
-      "BasePath": "_content/OnlineBookShop",
-      "RelativePath": "images/kitapresmi2#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "n12nalorc5",
-      "Integrity": "G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\kitapresmi2.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kullanıcıGirişi.png",
-      "SourceId": "OnlineBookShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\",
-      "BasePath": "_content/OnlineBookShop",
-      "RelativePath": "images/kullanıcıGirişi#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "7qt7k97n03",
-      "Integrity": "weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\kullanıcıGirişi.png"
-    },
-    {
-      "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\yönetici.png",
-      "SourceId": "OnlineBookShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\",
-      "BasePath": "_content/OnlineBookShop",
-      "RelativePath": "images/yönetici#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "nkvpvdfqs4",
-      "Integrity": "6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\yönetici.png"
-    },
-    {
       "Identity": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\index.html",
       "SourceId": "OnlineBookShop",
       "SourceType": "Discovered",
@@ -283,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c8aibhzty7",
-      "Integrity": "tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=",
+      "Fingerprint": "ly6oun2vrr",
+      "Integrity": "PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\kitaplik.html"
@@ -653,334 +569,6 @@
       ]
     },
     {
-      "Route": "images/kitapresmi.jpg",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "119981"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 18:52:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM="
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi.oayyiyry81.jpg",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "119981"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 18:52:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oayyiyry81"
-        },
-        {
-          "Name": "label",
-          "Value": "images/kitapresmi.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ICyH3aGnAh9uYEKzdrJf1M+hFUUgivZLKwHQWkphJvM="
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi2.jpg",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi2.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6411"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 19:09:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE="
-        }
-      ]
-    },
-    {
-      "Route": "images/kitapresmi2.n12nalorc5.jpg",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi2.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6411"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 21 Jun 2025 19:09:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "n12nalorc5"
-        },
-        {
-          "Name": "label",
-          "Value": "images/kitapresmi2.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-G2iqZph8gy43JdFweHKb8JlmeMw4kTpcD0uBJPenqEE="
-        }
-      ]
-    },
-    {
-      "Route": "images/kullanıcıGirişi.7qt7k97n03.png",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kullanıcıGirişi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13656"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:30:31 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7qt7k97n03"
-        },
-        {
-          "Name": "label",
-          "Value": "images/kullanıcıGirişi.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0="
-        }
-      ]
-    },
-    {
-      "Route": "images/kullanıcıGirişi.png",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kullanıcıGirişi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13656"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:30:31 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-weVcRZuTH7vuFl00BTmR+QAEWdueDy2HpB/XYtqBH/0="
-        }
-      ]
-    },
-    {
-      "Route": "images/yönetici.nkvpvdfqs4.png",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\yönetici.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5721"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:31:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nkvpvdfqs4"
-        },
-        {
-          "Name": "label",
-          "Value": "images/yönetici.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU="
-        }
-      ]
-    },
-    {
-      "Route": "images/yönetici.png",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\yönetici.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5721"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 22 Jun 2025 08:31:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-6VA4zU87FfnZPE6RolFaOc7nyBZis1AA0xKmJx3+lpU="
-        }
-      ]
-    },
-    {
       "Route": "index.html",
       "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\pn8d554jha-nhtcnzwulj.gz",
       "Selectors": [
@@ -1279,13 +867,13 @@
       ]
     },
     {
-      "Route": "kitaplik.c8aibhzty7.html",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-c8aibhzty7.gz",
+      "Route": "kitaplik.html",
+      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-ly6oun2vrr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000309885342"
+          "Quality": "0.000285551114"
         }
       ],
       "ResponseHeaders": [
@@ -1295,19 +883,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3226"
+          "Value": "3501"
         },
         {
           "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -1323,26 +911,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
+          "Value": "W/\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "c8aibhzty7"
-        },
-        {
-          "Name": "label",
-          "Value": "kitaplik.html"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
         }
       ]
     },
     {
-      "Route": "kitaplik.c8aibhzty7.html",
+      "Route": "kitaplik.html",
       "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1352,7 +932,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12268"
+          "Value": "13217"
         },
         {
           "Name": "Content-Type",
@@ -1360,11 +940,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
+          "Value": "\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.html.gz",
+      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-ly6oun2vrr.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo="
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.ly6oun2vrr.html",
+      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-ly6oun2vrr.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000285551114"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3501"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ly6oun2vrr"
+        },
+        {
+          "Name": "label",
+          "Value": "kitaplik.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
+        }
+      ]
+    },
+    {
+      "Route": "kitaplik.ly6oun2vrr.html",
+      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1374,7 +1099,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c8aibhzty7"
+          "Value": "ly6oun2vrr"
         },
         {
           "Name": "label",
@@ -1382,13 +1107,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
+          "Value": "sha256-PbOlwoSn2xdRYX2EqbLmOqamdVAuGItdzLJy2l9zzZw="
         }
       ]
     },
     {
-      "Route": "kitaplik.c8aibhzty7.html.gz",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-c8aibhzty7.gz",
+      "Route": "kitaplik.ly6oun2vrr.html.gz",
+      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-ly6oun2vrr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1397,7 +1122,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3226"
+          "Value": "3501"
         },
         {
           "Name": "Content-Type",
@@ -1405,11 +1130,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
+          "Value": "\"9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
+          "Value": "Fri, 27 Jun 2025 16:14:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1427,7 +1152,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c8aibhzty7"
+          "Value": "ly6oun2vrr"
         },
         {
           "Name": "label",
@@ -1435,144 +1160,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU="
-        }
-      ]
-    },
-    {
-      "Route": "kitaplik.html",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-c8aibhzty7.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000309885342"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3226"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
-        }
-      ]
-    },
-    {
-      "Route": "kitaplik.html",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "12268"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-tLw5DDb1iZ7s6bM0BVZtu16Xomw25IIZeZtbn4adCfQ="
-        }
-      ]
-    },
-    {
-      "Route": "kitaplik.html.gz",
-      "AssetFile": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\obj\\Debug\\net9.0\\compressed\\1c0z8wbh4i-c8aibhzty7.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3226"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 14:24:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-uNAfJ1TGoKW5sVbejQ2VVqP1Gx2S7BH0KVxksFX0IQU="
+          "Value": "sha256-9II8kAPKwOGEZTAQ2REVjg0EX3SN/mLgD1SJlwPNljo="
         }
       ]
     },

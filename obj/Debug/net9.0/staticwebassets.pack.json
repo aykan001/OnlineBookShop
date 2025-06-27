@@ -5,22 +5,6 @@
       "PackagePath": "staticwebassets\\begeniler.html"
     },
     {
-      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi.jpg",
-      "PackagePath": "staticwebassets\\images\\kitapresmi.jpg"
-    },
-    {
-      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi2.jpg",
-      "PackagePath": "staticwebassets\\images\\kitapresmi2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kullanıcıGirişi.png",
-      "PackagePath": "staticwebassets\\images\\kullanıcıGirişi.png"
-    },
-    {
-      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\yönetici.png",
-      "PackagePath": "staticwebassets\\images\\yönetici.png"
-    },
-    {
       "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

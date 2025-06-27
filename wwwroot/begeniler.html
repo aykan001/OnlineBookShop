@@ -181,8 +181,15 @@
   <div class="book-list" id="likedBooks"></div>
 
   <script>
+    // 🔐 XSS koruması
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      })[m]);
+    }
+
     let allBooks = [];
-  
+
     async function fetchLikedBooks() {
       const userId = parseInt(localStorage.getItem("userId"));
       if (!userId) {
@@ -190,7 +197,7 @@
         window.location.href = "/giris.html";
         return;
       }
-  
+
       try {
         const res = await fetch(`/api/begeniler/${userId}`);
         if (!res.ok) throw new Error("Beğeniler alınamadı.");
@@ -201,26 +208,33 @@
         alert("Hata oluştu: " + err.message);
       }
     }
-  
+
     function renderBooks(books) {
       const container = document.getElementById("likedBooks");
       container.innerHTML = "";
-  
+
       if (books.length === 0) {
         container.innerHTML = "<div style='color:#888;'>Uygun türde beğenilen kitap bulunamadı.</div>";
         return;
       }
-  
+
       books.forEach(book => {
         const div = document.createElement("div");
         div.className = "book-item";
+
+        const kitapAdi = escapeHTML(book.kitapAdi);
+        const tur = escapeHTML(book.tur);
+        const aciklama = escapeHTML(book.aciklama);
+        const stok = book.stok;
+        const ucret = book.ucret.toFixed(2);
+
         div.innerHTML = `
           <div class="book-info">
-            <div><strong>Kitap:</strong> ${book.kitapAdi}</div>
-            <div><strong>Tür:</strong> ${book.tur}</div>
-            <div><strong>Açıklama:</strong> ${book.aciklama}</div>
-            <div><strong>Stok:</strong> ${book.stok}</div>
-            <div><strong>Ücret:</strong> ₺${book.ucret.toFixed(2)}</div>
+            <div><strong>Kitap:</strong> ${kitapAdi}</div>
+            <div><strong>Tür:</strong> ${tur}</div>
+            <div><strong>Açıklama:</strong> ${aciklama}</div>
+            <div><strong>Stok:</strong> ${stok}</div>
+            <div><strong>Ücret:</strong> ₺${ucret}</div>
           </div>
           <div class="book-actions">
             <button class="action-button like-button liked" onclick="toggleLike(${book.id}, this)">
@@ -234,17 +248,17 @@
         container.appendChild(div);
       });
     }
-  
+
     function filterByGenre() {
       const selectedGenre = document.getElementById("genreFilter").value;
       const filtered = selectedGenre ? allBooks.filter(book => book.tur === selectedGenre) : allBooks;
       renderBooks(filtered);
     }
-  
+
     async function toggleLike(bookId, button) {
       const userId = parseInt(localStorage.getItem("userId"));
       const isLiked = button.classList.contains("liked");
-    
+
       try {
         if (isLiked) {
           const res = await fetch(`/api/begeniler/${bookId}/${userId}`, {
@@ -265,8 +279,8 @@
         alert("Hata: " + err.message);
       }
     }
-    
-      async function addToCart(bookId) {
+
+    async function addToCart(bookId) {
       const userId = parseInt(localStorage.getItem("userId"));
       try {
         const res = await fetch("/api/sepet", {
@@ -279,15 +293,14 @@
             kullaniciId: userId
           })
         });
-    
+
         if (!res.ok) {
           const msg = await res.text();
           throw new Error(msg);
         }
-    
-        // ✅ başarılıysa yönlendir
+
         window.location.href = "/sepet.html";
-    
+
       } catch (err) {
         alert("Hata: " + err.message);
       }
@@ -295,7 +308,7 @@
 
     window.onload = fetchLikedBooks;
   </script>
-
 </body>
 </html>
+
 

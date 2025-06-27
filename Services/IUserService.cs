@@ -1,5 +1,5 @@
-// Services/IUserService.cs
-using OnlineBookShop.Models;
+using System.Threading.Tasks;
+using OnlineBookShop.Models; // 💥 BU SATIR GEREKLİ
 
 namespace OnlineBookShop.Services
 {
@@ -12,3 +12,4 @@ namespace OnlineBookShop.Services
         Task<bool> UpdatePasswordAsync(int id, string oldPassword, string newPassword);
     }
 }
+

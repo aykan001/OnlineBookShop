@@ -230,11 +230,17 @@
   <div class="list-container">
     <div class="listbox" id="bookList">
       <div class="book-header">
-        <span>Kitap Adı <button onclick="sortBy('kitap_adi')">↕</button></span>
+        <span>Kitap Adı 
+          <button onclick="sortBy('kitapAdi')"><i id="icon-kitapAdi" class="fas fa-sort"></i></button>
+        </span>
         <span>Türü</span>
         <span>Açıklama</span>
-        <span>Stok <button onclick="sortBy('stok')">↕</button></span>
-        <span>Ücret <button onclick="sortBy('ucret')">↕</button></span>
+        <span>Stok 
+          <button onclick="sortBy('stok')"><i id="icon-stok" class="fas fa-sort"></i></button>
+        </span>
+        <span>Ücret 
+          <button onclick="sortBy('ucret')"><i id="icon-ucret" class="fas fa-sort"></i></button>
+        </span>
         <span>Puan</span>
         <span>İşlemler</span>
       </div>
@@ -243,21 +249,19 @@
   </div>
 
   <div class="toggle-menu" id="genreMenu">
-    <h3>Türler</h3>
-    <button onclick="filterGenre('Anı')">Anı</button>
-    <button onclick="filterGenre('Anlatı')">Anlatı</button>
-    <button onclick="filterGenre('Çizgi Roman')">Çizgi Roman</button>
-    <button onclick="filterGenre('Deneme')">Deneme</button>
-    <button onclick="filterGenre('Edebiyat')">Edebiyat</button>
-    <button onclick="filterGenre('Bilim')">Bilim</button>
-    <button onclick="filterGenre('Araştırma')">Araştırma</button>
-    <button onclick="filterGenre('Gençlik')">Gençlik</button>
-    <button onclick="resetFilter()">Tümünü Göster</button>
+    <!-- ... Türler butonları ... -->
     <div class="toggle-close" id="closeBtn" onclick="toggleMenu()">◀</div>
   </div>
   <div class="toggle-button" id="openBtn" onclick="toggleMenu()">▶</div>
 
   <script>
+    // 🔐 escapeHTML ile XSS koruması
+    function escapeHTML(str) {
+      return String(str).replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      })[m]);
+    }
+
     let books = [];
     let currentPage = 1;
     let totalBooks = 0;
@@ -273,32 +277,37 @@
     }
 
     async function fetchBooks() {
-      const response = await fetch('/api/kitaplar?sayfa=1&adet=100'); // tüm kitaplar
-      const data = await response.json();
-    
+      let url = `/api/kitaplar?sayfa=${currentPage}&adet=${booksPerPage}`;
+      if (currentGenre) url += `&tur=${encodeURIComponent(currentGenre)}`;
+      if (currentSort) url += `&sirala=${currentSort}&yon=${currentSortDir}`;
+
+      const response = await fetch(url);
+      const { kitaplar: data, toplam } = await response.json();
+      totalBooks = toplam;
+
       const puanMapRes = await fetch(`/api/kitappuanlarim/${userId}`);
       const userPuanMap = puanMapRes.ok ? await puanMapRes.json() : {};
-    
+
       books = await Promise.all(data.map(async book => {
         const puanRes = await fetch(`/api/kitappuan/${book.id}`);
         const ortalamaPuan = puanRes.ok ? await puanRes.json() : 0;
         const kullaniciPuani = userPuanMap[book.id] || null;
-    
+
         return {
           id: book.id,
-          title: book.kitapAdi,
-          genre: book.tur,
-          description: book.aciklama,
+          title: escapeHTML(book.kitapAdi),
+          genre: escapeHTML(book.tur),
+          description: escapeHTML(book.aciklama),
           stock: book.stok,
           price: book.ucret,
           rating: parseFloat(ortalamaPuan).toFixed(1),
           userRating: kullaniciPuani
         };
       }));
-    
-      updateDisplay();
-    }
 
+      updateDisplay();
+      updateSortIcons();
+    }
 
     function sortBy(field) {
       if (currentSort === field) {
@@ -311,17 +320,31 @@
       fetchBooks();
     }
 
+    function updateSortIcons() {
+      ['kitapAdi', 'stok', 'ucret'].forEach(f => {
+        const icon = document.getElementById(`icon-${f}`);
+        if (icon) {
+          icon.className = f === currentSort
+            ? (currentSortDir === 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down')
+            : 'fas fa-sort';
+        }
+      });
+    }
+
     function updateDisplay() {
       const list = document.getElementById("bookList");
       const headers = list.querySelector(".book-header");
       list.innerHTML = "";
       list.appendChild(headers);
+
       books.forEach(book => {
         const item = document.createElement("div");
         item.className = "book-item";
+
         const puanLabel = document.createElement("span");
         puanLabel.className = "average-rating";
         puanLabel.textContent = `⭐ ${book.rating}`;
+
         const actions = document.createElement("span");
         actions.className = "book-actions";
         actions.innerHTML = `
@@ -331,8 +354,10 @@
           <button class="action-button" onclick="addToCart(${book.id})">
             <i class="fas fa-cart-plus"></i>
           </button>`;
+
         const stars = renderRatingStars(book.id, puanLabel);
         actions.appendChild(stars);
+
         item.innerHTML = `
           <span>${book.title}</span>
           <span>${book.genre}</span>
@@ -343,6 +368,7 @@
         item.appendChild(actions);
         list.appendChild(item);
       });
+
       updatePagination();
     }
 
