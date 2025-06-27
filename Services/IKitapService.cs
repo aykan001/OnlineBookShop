@@ -1,11 +1,12 @@
-using System.Collections.Generic;
-using OnlineBookShop.Models; // 👈 Bu eksikti, eklemen gerekiyor
+using OnlineBookShop.Models;
 
 namespace OnlineBookShop.Services
 {
     public interface IKitapService
     {
-        List<Kitap> GetAll();
+        Task<List<Kitap>> GetAllAsync();
+        Task<Kitap?> GetByIdAsync(int id);
     }
 }
+
 
