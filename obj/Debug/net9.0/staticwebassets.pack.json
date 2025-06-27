@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\begeniler.html",
+      "PackagePath": "staticwebassets\\begeniler.html"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi.jpg",
+      "PackagePath": "staticwebassets\\images\\kitapresmi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kitapresmi2.jpg",
+      "PackagePath": "staticwebassets\\images\\kitapresmi2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\kullanıcıGirişi.png",
+      "PackagePath": "staticwebassets\\images\\kullanıcıGirişi.png"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\images\\yönetici.png",
+      "PackagePath": "staticwebassets\\images\\yönetici.png"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\kitaplik.html",
+      "PackagePath": "staticwebassets\\kitaplik.html"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\profil.html",
+      "PackagePath": "staticwebassets\\profil.html"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\register.html",
+      "PackagePath": "staticwebassets\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\aykan\\OneDrive\\Desktop\\OnlineBookShop\\wwwroot\\sepet.html",
+      "PackagePath": "staticwebassets\\sepet.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.OnlineBookShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.OnlineBookShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.OnlineBookShop.props",
+      "PackagePath": "build\\OnlineBookShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.OnlineBookShop.props",
+      "PackagePath": "buildMultiTargeting\\OnlineBookShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.OnlineBookShop.props",
+      "PackagePath": "buildTransitive\\OnlineBookShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

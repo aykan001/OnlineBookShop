@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Profilim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 40px;
+    }
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 20px;
+    }
+    .top-bar a {
+      font-size: 24px;
+      color: #444;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .top-bar a:hover {
+      transform: scale(1.2);
+      color: #000;
+    }
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      color: #2b6cb0;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 600px;
+      margin: 100px auto 0;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .info {
+      margin: 20px 0;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      color: #333;
+      font-size: 16px;
+    }
+    .info div {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .delete-btn {
+      background-color: #e53e3e;
+      color: white;
+    }
+    .logout-btn {
+      background-color: #3182ce;
+      color: white;
+    }
+    .code-box {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #2d3748;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    #orderList {
+      margin-top: 10px;
+      width: 100%;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+<script>
+  const userId = localStorage.getItem("userId");
+  if (!userId) {
+    alert("Giriş yapmanız gerekiyor.");
+    window.location.href = "index.html";
+  }
+</script>
+
+<a href="kitaplik.html" class="back-link">&larr; Kitaplığa Dön</a>
+<div class="top-bar">
+  <a href="begeniler.html" title="Beğeniler"><i class="fas fa-heart"></i></a>
+  <a href="sepet.html" title="Sepet"><i class="fas fa-shopping-cart"></i></a>
+  <a href="profil.html" title="Profil"><i class="fas fa-user"></i></a>
+</div>
+
+<div class="container">
+  <h1>Profil Bilgileri</h1>
+
+  <div class="info" id="userInfo">Yükleniyor...</div>
+
+  <div class="section">
+    <button onclick="toggleOrders()">Siparişlerim</button>
+    <select id="orderList" size="6" class="hidden"></select>
+  </div>
+
+  <div class="section">
+    <button onclick="togglePasswordChange()">Şifre Değiştir</button>
+    <div id="passwordSection" class="hidden">
+      <input type="password" id="oldPassword" placeholder="Eski Şifre">
+      <input type="password" id="newPassword" placeholder="Yeni Şifre">
+      <button onclick="changePassword()">Kaydet</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+  </div>
+
+  <div class="section">
+    <h3>Hesabı Sil</h3>
+    <p>Bu işlemi yapmak için aşağıdaki rastgele kodu girmeniz gerekir.</p>
+    <div class="code-box" id="deleteCode"></div>
+    <input type="text" id="codeInput" placeholder="Kodu buraya yazın...">
+    <button class="delete-btn" onclick="deleteAccount()">Hesabı Sil</button>
+  </div>
+</div>
+
+<script>
+  const deleteCode = Math.floor(1000 + Math.random() * 9000).toString();
+  document.getElementById("deleteCode").textContent = deleteCode;
+
+  async function getUserInfo() {
+    try {
+      const res = await fetch(`/api/users/${userId}`);
+      if (!res.ok) throw new Error("Kullanıcı bilgisi alınamadı.");
+      const data = await res.json();
+
+      document.getElementById("userInfo").innerHTML = `
+        <div><strong>Ad:</strong> ${data.ad}</div>
+        <div><strong>Email:</strong> ${data.email}</div>
+      `;
+    } catch (e) {
+      document.getElementById("userInfo").innerText = "Kullanıcı bilgileri yüklenemedi.";
+    }
+  }
+
+  async function toggleOrders() {
+    const list = document.getElementById("orderList");
+    list.classList.toggle("hidden");
+    if (!list.classList.contains("hidden")) {
+      const res = await fetch(`/api/siparisler/${userId}`);
+      if (res.ok) {
+        const books = await res.json();
+        list.innerHTML = books.map(b => `<option>${b.kitapAdi} - ₺${b.ucret.toFixed(2)}</option>`).join("");
+      } else {
+        list.innerHTML = `<option>Hata oluştu.</option>`;
+      }
+    }
+  }
+
+  function togglePasswordChange() {
+    document.getElementById("passwordSection").classList.toggle("hidden");
+  }
+
+  async function changePassword() {
+    const oldPassword = document.getElementById("oldPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const res = await fetch("/api/change-password", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, oldPassword, newPassword })
+    });
+    if (res.ok) {
+      alert("Şifre başarıyla değiştirildi.");
+      window.location.reload();
+    } else {
+      const text = await res.text();
+      alert(text);
+    }
+  }
+
+  async function deleteAccount() {
+    const input = document.getElementById("codeInput").value;
+    if (input !== deleteCode) {
+      alert("Kod yanlış. Lütfen tekrar deneyin.");
+      return;
+    }
+    const res = await fetch(`/api/users/${userId}`, { method: 'DELETE' });
+    if (res.ok) {
+      alert("Hesabınız silindi.");
+      localStorage.clear();
+      window.location.href = "index.html";
+    } else {
+      alert("Hesap silinirken hata oluştu.");
+    }
+  }
+
+  function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+  }
+
+  window.addEventListener('DOMContentLoaded', getUserInfo);
+</script>
+</body>
+</html>

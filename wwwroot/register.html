@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Kayıt Sayfası</title>
+    <style>
+        /* Tüm stiller giriş sayfası ile aynıdır */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: url('images/kitapresmi2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .login-box {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            padding: 40px 50px;
+            width: 340px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .login-box h2 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-shadow: 0 0 12px rgba(255,255,255,0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            color: #eee;
+            font-weight: 600;
+            text-align: left;
+            /* inputların alt alta olması için block yaptık */
+        }
+
+        label input {
+            display: block;
+            margin-top: 8px;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 0 8px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        label input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background-color: #5a9fff;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px #5a9fff;
+        }
+
+        button:hover {
+            background-color: #4a8ce0;
+            box-shadow: 0 0 20px #4a8ce0;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .register-link {
+            margin-top: 25px;
+            color: #ddd;
+        }
+
+        .register-link a {
+            color: #5a9fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+            color: #4a8ce0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Kayıt Ol</h2>
+        <form id="registerForm">
+            <label for="ad">Ad:
+                <input type="text" id="ad" required minlength="2" />
+            </label>
+            <label for="email">Email:
+                <input type="email" id="email" required />
+            </label>
+            <label for="sifre">Şifre (en az 6 karakter):
+                <input type="password" id="sifre" required minlength="6" />
+            </label>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+        <p id="message"></p>
+        <p class="register-link">Zaten üye misin? <a href="index.html">Giriş Yap</a></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('registerForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const ad = document.getElementById('ad').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const sifre = document.getElementById('sifre').value;
+
+            // Basit frontend doğrulama
+            if (sifre.length < 6) {
+                message.style.color = 'tomato';
+                message.textContent = 'Şifre en az 6 karakter olmalıdır.';
+                return;
+            }
+
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ad, email, sifre })
+            });
+
+            if (response.ok) {
+                message.style.color = 'lightgreen';
+                message.textContent = 'Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                const error = await response.text();
+                message.style.color = 'tomato';
+                message.textContent = error;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sepetim</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-bar a, .top-bar i {
+      font-size: 26px;
+      cursor: pointer;
+      color: #444;
+      transition: transform 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .top-bar a:hover, .top-bar i:hover {
+      transform: scale(1.2);
+      color: #000;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .controls {
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .controls a {
+      background-color: #5a67d8;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .controls a:hover {
+      background-color: #434190;
+    }
+
+    .controls select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .book-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .book-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book-info div {
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    .book-actions button {
+      background-color: #ff4d4f;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .book-actions button:hover {
+      background-color: #d9363e;
+    }
+
+    /* Ödeme modalı için ek stil */
+    #paymentModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 20px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .modal-content .pay-btn {
+      background-color: #5a67d8;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .modal-content .cancel-btn {
+      background-color: #e2e8f0;
+      color: #333;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="begeniler.html" title="Beğenilenler"><i class="fas fa-heart"></i></a>
+    <a href="sepet.html" title="Sepet"><i class="fas fa-shopping-cart"></i></a>
+    <a href="profil.html" title="Profil"><i class="fas fa-user"></i></a>
+  </div>
+
+  <h1>Sepetim</h1>
+
+  <div class="controls">
+    <a href="kitaplik.html"><i class="fas fa-arrow-left"></i> Kitaplığa Dön</a>
+    <select id="genreFilter" onchange="filterByGenre()">
+      <option value="">Tüm Türler</option>
+      <option value="Anı">Anı</option>
+      <option value="Anlatı">Anlatı</option>
+      <option value="Çizgi Roman">Çizgi Roman</option>
+      <option value="Deneme">Deneme</option>
+      <option value="Edebiyat">Edebiyat</option>
+      <option value="Bilim">Bilim</option>
+      <option value="Araştırma">Araştırma</option>
+      <option value="Gençlik">Gençlik</option>
+    </select>
+  </div>
+
+  <div class="book-list" id="cartBooks"></div>
+
+  <div style="text-align:center; margin-top: 30px;">
+    <button onclick="showPaymentModal()" style="padding: 12px 24px; background-color: #5a67d8; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+      Ödeme Yap
+    </button>
+  </div>
+
+  <!-- Ödeme modalı -->
+  <div id="paymentModal" style="display: none;">
+    <div class="modal-content">
+      <h3>Ödeme Bilgileri</h3>
+      <input type="text" id="cardName" placeholder="Kart Sahibi">
+      <input type="text" id="cardNumber" placeholder="Kart Numarası">
+      <input type="text" id="exp" placeholder="SKT (AA/YY)">
+      <input type="text" id="cvv" placeholder="CVV">
+      <button class="pay-btn" onclick="processPayment()">Satın Al</button>
+      <button class="cancel-btn" onclick="document.getElementById('paymentModal').style.display='none'">İptal</button>
+    </div>
+  </div>
+
+  <script>
+    let allBooks = [];
+    let selectedBooks = [];
+
+    async function fetchCartBooks() {
+      const userId = parseInt(localStorage.getItem("userId"));
+      if (!userId) {
+        alert("Lütfen giriş yapın.");
+        window.location.href = "/giris.html";
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/sepet/${userId}`);
+        if (!res.ok) throw new Error("Sepet verisi alınamadı.");
+        const books = await res.json();
+        allBooks = books;
+        renderBooks(books);
+      } catch (err) {
+        alert("Hata: " + err.message);
+      }
+    }
+
+    function renderBooks(books) {
+      const container = document.getElementById("cartBooks");
+      container.innerHTML = "";
+
+      if (books.length === 0) {
+        container.innerHTML = "<div style='color: #777;'>Sepetiniz boş.</div>";
+        return;
+      }
+
+      books.forEach(book => {
+        const div = document.createElement("div");
+        div.className = "book-item";
+        div.innerHTML = `
+          <input type="checkbox" onchange="toggleSelection(${book.id}, this.checked)" style="margin-right:15px;">
+          <div class="book-info">
+            <div><strong>Kitap:</strong> ${book.kitapAdi}</div>
+            <div><strong>Tür:</strong> ${book.tur}</div>
+            <div><strong>Açıklama:</strong> ${book.aciklama}</div>
+            <div><strong>Stok:</strong> ${book.stok}</div>
+            <div><strong>Ücret:</strong> ₺${book.ucret.toFixed(2)}</div>
+          </div>
+          <div class="book-actions">
+            <button onclick="removeFromCart(${book.kitapId || book.id})">Sil</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function toggleSelection(bookId, checked) {
+      if (checked) selectedBooks.push(bookId);
+      else selectedBooks = selectedBooks.filter(id => id !== bookId);
+    }
+
+    function filterByGenre() {
+      const selectedGenre = document.getElementById("genreFilter").value;
+      const filtered = selectedGenre ? allBooks.filter(book => book.tur === selectedGenre) : allBooks;
+      renderBooks(filtered);
+    }
+
+    function showPaymentModal() {
+      if (selectedBooks.length === 0) {
+        alert("Lütfen en az bir kitap seçin.");
+        return;
+      }
+      document.getElementById("paymentModal").style.display = "flex";
+    }
+
+    async function processPayment() {
+      const userId = parseInt(localStorage.getItem("userId"));
+      const cardName = document.getElementById("cardName").value.trim();
+      const cardNumber = document.getElementById("cardNumber").value.trim();
+      const exp = document.getElementById("exp").value.trim();
+      const cvv = document.getElementById("cvv").value.trim();
+
+      if (!cardName || !cardNumber || !exp || !cvv) {
+        alert("Tüm ödeme bilgilerini doldurun.");
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/satinalma", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId, kitapIds: selectedBooks })
+        });
+
+        const result = await res.text();
+        alert(result);
+        document.getElementById("paymentModal").style.display = "none";
+        fetchCartBooks();
+      } catch (err) {
+        alert("Hata: " + err.message);
+      }
+    }
+
+    async function removeFromCart(bookId) {
+      const userId = parseInt(localStorage.getItem("userId"));
+      if (!userId) {
+        alert("Lütfen giriş yapın.");
+        return;
+      }
+
+      if (!confirm("Bu kitabı sepetten silmek istiyor musunuz?")) return;
+
+      try {
+        const res = await fetch(`/api/sepet/${bookId}/${userId}`, { method: 'DELETE' });
+        if (!res.ok) throw new Error(await res.text());
+        fetchCartBooks();
+      } catch (err) {
+        alert("Silme hatası: " + err.message);
+      }
+    }
+
+    window.onload = fetchCartBooks;
+  </script>
+</body>
+</html>

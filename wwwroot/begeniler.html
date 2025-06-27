@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beğenilen Kitaplar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #5a67d8;
+      --gray: #f1f5f9;
+      --text: #333;
+      --light: #fdfdfd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--gray);
+      padding: 50px 60px;
+      min-height: 100vh;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-bar a {
+      font-size: 22px;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .top-bar a:hover {
+      color: var(--primary);
+      transform: scale(1.2);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-controls a {
+      text-decoration: none;
+      background-color: var(--light);
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .nav-controls a:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .nav-controls select {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: white;
+      color: #333;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .book-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s ease;
+    }
+
+    .book-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book-info div {
+      margin-bottom: 8px;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .book-info div strong {
+      color: #222;
+    }
+
+    .book-actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .action-button {
+      background: var(--gray);
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .action-button i {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .action-button:hover {
+      background: #e2e8f0;
+    }
+
+    .like-button.liked i {
+      color: #e0245e;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="begeniler.html" title="Beğenilenler"><i class="fas fa-heart"></i></a>
+    <a href="sepet.html" title="Sepet"><i class="fas fa-shopping-cart"></i></a>
+    <a href="profil.html" title="Profil"><i class="fas fa-user"></i></a>
+  </div>
+
+  <h1>Beğenilen Kitaplar</h1>
+
+  <div class="nav-controls">
+    <a href="kitaplik.html"><i class="fas fa-arrow-left"></i> Kitaplığıma Dön</a>
+    <a href="sepet.html">Sepete Git <i class="fas fa-arrow-right"></i></a>
+    <select id="genreFilter" onchange="filterByGenre()">
+      <option value="">Tüm Türler</option>
+      <option value="Anı">Anı</option>
+      <option value="Anlatı">Anlatı</option>
+      <option value="Çizgi Roman">Çizgi Roman</option>
+      <option value="Deneme">Deneme</option>
+      <option value="Edebiyat">Edebiyat</option>
+      <option value="Bilim">Bilim</option>
+      <option value="Araştırma">Araştırma</option>
+      <option value="Gençlik">Gençlik</option>
+    </select>
+  </div>
+
+  <div class="book-list" id="likedBooks"></div>
+
+  <script>
+    let allBooks = [];
+  
+    async function fetchLikedBooks() {
+      const userId = parseInt(localStorage.getItem("userId"));
+      if (!userId) {
+        alert("Lütfen önce giriş yapın.");
+        window.location.href = "/giris.html";
+        return;
+      }
+  
+      try {
+        const res = await fetch(`/api/begeniler/${userId}`);
+        if (!res.ok) throw new Error("Beğeniler alınamadı.");
+        const books = await res.json();
+        allBooks = books;
+        renderBooks(books);
+      } catch (err) {
+        alert("Hata oluştu: " + err.message);
+      }
+    }
+  
+    function renderBooks(books) {
+      const container = document.getElementById("likedBooks");
+      container.innerHTML = "";
+  
+      if (books.length === 0) {
+        container.innerHTML = "<div style='color:#888;'>Uygun türde beğenilen kitap bulunamadı.</div>";
+        return;
+      }
+  
+      books.forEach(book => {
+        const div = document.createElement("div");
+        div.className = "book-item";
+        div.innerHTML = `
+          <div class="book-info">
+            <div><strong>Kitap:</strong> ${book.kitapAdi}</div>
+            <div><strong>Tür:</strong> ${book.tur}</div>
+            <div><strong>Açıklama:</strong> ${book.aciklama}</div>
+            <div><strong>Stok:</strong> ${book.stok}</div>
+            <div><strong>Ücret:</strong> ₺${book.ucret.toFixed(2)}</div>
+          </div>
+          <div class="book-actions">
+            <button class="action-button like-button liked" onclick="toggleLike(${book.id}, this)">
+              <i class="fas fa-heart"></i>
+            </button>
+            <button class="action-button" onclick="addToCart(${book.id})">
+              <i class="fas fa-cart-plus"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+  
+    function filterByGenre() {
+      const selectedGenre = document.getElementById("genreFilter").value;
+      const filtered = selectedGenre ? allBooks.filter(book => book.tur === selectedGenre) : allBooks;
+      renderBooks(filtered);
+    }
+  
+    async function toggleLike(bookId, button) {
+      const userId = parseInt(localStorage.getItem("userId"));
+      const isLiked = button.classList.contains("liked");
+    
+      try {
+        if (isLiked) {
+          const res = await fetch(`/api/begeniler/${bookId}/${userId}`, {
+            method: 'DELETE'
+          });
+          if (!res.ok) throw new Error(await res.text());
+          await fetchLikedBooks();
+        } else {
+          const res = await fetch(`/api/begeniler`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kitapId: bookId, kullaniciId: userId })
+          });
+          if (!res.ok) throw new Error(await res.text());
+          await fetchLikedBooks();
+        }
+      } catch (err) {
+        alert("Hata: " + err.message);
+      }
+    }
+    
+      async function addToCart(bookId) {
+      const userId = parseInt(localStorage.getItem("userId"));
+      try {
+        const res = await fetch("/api/sepet", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            kitapId: bookId,
+            kullaniciId: userId
+          })
+        });
+    
+        if (!res.ok) {
+          const msg = await res.text();
+          throw new Error(msg);
+        }
+    
+        // ✅ başarılıysa yönlendir
+        window.location.href = "/sepet.html";
+    
+      } catch (err) {
+        alert("Hata: " + err.message);
+      }
+    }
+
+    window.onload = fetchLikedBooks;
+  </script>
+
+</body>
+</html>
+

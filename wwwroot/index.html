@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: url('images/kitapresmi2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .login-box {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            padding: 40px 50px;
+            width: 340px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .login-box h2 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-shadow: 0 0 12px rgba(255,255,255,0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        label {
+            color: #eee;
+            font-weight: 600;
+            text-align: left;
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 0 8px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background-color: #5a9fff;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px #5a9fff;
+        }
+
+        button:hover {
+            background-color: #4a8ce0;
+            box-shadow: 0 0 20px #4a8ce0;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .register-link {
+            margin-top: 25px;
+            color: #ddd;
+        }
+
+        .register-link a {
+            color: #5a9fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+            color: #4a8ce0;
+        }
+
+        .input-icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .input-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-icon i {
+            font-size: 26px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm">
+            <div class="input-icon-container">
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required autocomplete="username" />
+
+            <label for="sifre">Şifre:</label>
+            <input type="password" id="sifre" required autocomplete="current-password" />
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+        <p id="message"></p>
+        <p class="register-link">Kayıt olmadın mı? <a href="register.html">Kayıt Ol</a></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const sifre = document.getElementById('sifre').value.trim();
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ Email: email, Sifre: sifre })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // ✅ Kullanıcı bilgisini localStorage'a kaydet
+                    localStorage.setItem("userId", data.userId);  // Diğer sayfalarda kullanılacak
+                    localStorage.setItem("ad", data.ad);          // Profil sayfası için
+                    localStorage.setItem("email", email);         // Girişteki email
+
+                    message.style.color = 'lightgreen';
+                    message.textContent = data.message || 'Giriş başarılı!';
+
+                    setTimeout(() => {
+                        window.location.href = "kitaplik.html";
+                    }, 1000);
+                } else {
+                    const error = await response.text();
+                    message.style.color = 'tomato';
+                    message.textContent = error || 'Email veya şifre hatalı!';
+                }
+            } catch (err) {
+                message.style.color = 'tomato';
+                message.textContent = 'Sunucuya bağlanılamadı!';
+            }
+        });
+    </script>
+</body>
+</html>
