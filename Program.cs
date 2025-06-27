@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using OnlineBookShop.Services; // 👈 Yeni eklenen servis klasörü
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +33,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-var key = Encoding.ASCII.GetBytes("Bu-Cok-Gizli-Bir-Key1234567890!!"); // ✅ En az 32 karakter
+var key = Encoding.ASCII.GetBytes("Bu-Cok-Gizli-Bir-Key1234567890!!");
 
 builder.Services.AddAuthentication(options =>
 {
@@ -51,6 +52,9 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 });
+
+// ✅ Dependency Injection tanımı
+builder.Services.AddScoped<IKitapService, KitapService>();
 
 var app = builder.Build();
 
