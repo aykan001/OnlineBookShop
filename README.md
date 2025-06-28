@@ -96,6 +96,6 @@ Bu proje bir online kitaplık uygulamasıdır. Kullanıcılar kitapları görün
 
 ## 👨‍💻 Geliştirici
 
-Baki Aykan
+Feyza Adamhasan
 
 ---
